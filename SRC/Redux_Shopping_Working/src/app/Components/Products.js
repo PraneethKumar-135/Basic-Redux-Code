@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import './styles.css'
-import { add } from '../Store/Cartslice';
+import { add, PriceAction } from '../Store/Cartslice';
 import { useDispatch } from 'react-redux';
 
 
@@ -16,7 +16,8 @@ const Products = () => {
       .catch(error => console.error('Error fetching products:', error));
   }, []);
   const handleAdd = (filter) => {
-    dispatch(add(filter))
+    dispatch(add(filter)),
+      dispatch(PriceAction(filter.price))
   }
 
 

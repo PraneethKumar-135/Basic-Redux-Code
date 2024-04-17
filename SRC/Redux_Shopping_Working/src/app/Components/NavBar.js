@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import './styles.css'
 
 const Navbar = () => {
-    const items = useSelector((state) => state.cart) || [];
+    const items = useSelector((state) => state.cart.products) || [];
     return (
         <div
             style={{
